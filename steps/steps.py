@@ -153,6 +153,6 @@ def step_impl(context, xpath, expected_text):
       assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
 
 
-@step('Wait for the element with xpath {xpath} to be present')
+@step('Wait for the element with xpath "{xpath}" to be present')
 def step_impl(context, xpath):
-    WebDriverWait(context.driver, 10).until(EC.presence_of_element_located(By.XPATH(xpath)))
+    WebDriverWait(context.driver, 20).until(EC.presence_of_element_located((By.XPATH, xpath)))
