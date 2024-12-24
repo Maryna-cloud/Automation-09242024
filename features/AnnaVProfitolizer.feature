@@ -20,4 +20,5 @@ Feature: Test login functionality
     Then Verify page by title "Profotolizer - P&L charts"
     And Verify that xpath "//span[contains(text(),'annaverpcs2')]" should contain text "annaverpcs2"
     Then Wait 5 seconds
+    #Then Qdsgfdgdfgdfgdfg
     
