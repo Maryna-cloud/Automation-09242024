@@ -107,6 +107,7 @@ elif length_of_new_string < 10 and length_of_new_string >0:
 else:
     print ("this is not a password format")
 
+
 #MAC command / -    comment out
 #MAC command / +    remove comment
 #MAC control /     comment out
