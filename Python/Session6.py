@@ -1,57 +1,57 @@
-# #Loops, lists,strings
-# #loops
-# # 0+1+2+3+4+5+6+7+8+9+10
-# total = 0
-# for i in range(0,10):
-#     total = total + i
-#     print(f"total for each step is {total}")
-#    # total += i
-# print(f"the total is : {total}")
-#
-# #same with while loop
-# total = 0
-# i = 0
-# while i<10 :
-#     total = total + i
-#     i += 1
-#     print(f"total for each step is {total}")
-# print(f"the total is : {total}")
-#
-# #for loop with increment = 2 in each iteration
-# total = 0
-# for i in range(0,11,2):
-#     total = total + i
-#     print(f"total for each step is {total}")
-#    # total += i
-# print(f"the total is : {total}")
+#Loops, lists,strings
+#loops
+# 0+1+2+3+4+5+6+7+8+9+10
+total = 0
+for i in range(0,10):
+    total = total + i
+    print(f"total for each step is {total}")
+   # total += i
+print(f"the total is : {total}")
 
-#lists
-# fruits = ["apple", "banana", "cherry"]
-# mixed_list = ["apples", 2,"cherry", 4]
-# print(fruits)
-# print(fruits[0])
-# fruits.append("potato")
-# print(fruits)
-# print(type(fruits))
-#
-# print (mixed_list)
-# mixed_list.append("potato")
-# print (mixed_list)
-# mixed_list.remove("potato")
-# print (mixed_list)
-# mixed_list.remove("cherry")
-# print (mixed_list)
-#
-# print ("*"*50)
-# many_items = ["apple", "banana", "cherry",1,4,"top", 5,6,"bottom"]
-# print(f"the length of the many_items list is {len(many_items)} ")
-# print(many_items[len(many_items)-1])
-# many_items.remove(many_items[len(many_items)-5])
-# print(many_items )
+#same with while loop
+total = 0
+i = 0
+while i<10 :
+    total = total + i
+    i += 1
+    print(f"total for each step is {total}")
+print(f"the total is : {total}")
 
-# prices = [10,50,30,1,100,4]
-# print(f"Max price is {max(prices)}")
-# print(f"Min price is {min(prices)}")
+#for loop with increment = 2 in each iteration
+total = 0
+for i in range(0,11,2):
+    total = total + i
+    print(f"total for each step is {total}")
+   # total += i
+print(f"the total is : {total}")
+
+lists
+fruits = ["apple", "banana", "cherry"]
+mixed_list = ["apples", 2,"cherry", 4]
+print(fruits)
+print(fruits[0])
+fruits.append("potato")
+print(fruits)
+print(type(fruits))
+
+print (mixed_list)
+mixed_list.append("potato")
+print (mixed_list)
+mixed_list.remove("potato")
+print (mixed_list)
+mixed_list.remove("cherry")
+print (mixed_list)
+
+print ("*"*50)
+many_items = ["apple", "banana", "cherry",1,4,"top", 5,6,"bottom"]
+print(f"the length of the many_items list is {len(many_items)} ")
+print(many_items[len(many_items)-1])
+many_items.remove(many_items[len(many_items)-5])
+print(many_items )
+
+prices = [10,50,30,1,100,4]
+print(f"Max price is {max(prices)}")
+print(f"Min price is {min(prices)}")
 
 print ("*"*50)
 for i in range (1,6):
