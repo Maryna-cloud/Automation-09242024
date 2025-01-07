@@ -136,13 +136,12 @@ def switch_to_home(context):
 
 
 @step("Close current window")
-def step_impl(context):
+def close_window(context):
     context.driver.close()
 
 
 @step('Verify that xpath "{xpath}" should contain text "{expected_text}"')
-def step_impl(context, xpath, expected_text):
-      #element = WebDriverWait(context.driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))
+def verify_text_xpath(context, xpath, expected_text):
       element =  context.driver.find_element(By.XPATH, xpath)
       actual_text = element.text
       print(f"Expected text: {expected_text}")
@@ -154,5 +153,5 @@ def step_impl(context, xpath, expected_text):
 
 
 @step('Wait for the element with xpath "{xpath}" to be present')
-def step_impl(context, xpath):
+def verify_xpath_present(context, xpath):
     WebDriverWait(context.driver, 20).until(EC.presence_of_element_located((By.XPATH, xpath)))
