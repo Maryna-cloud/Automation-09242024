@@ -42,7 +42,6 @@ name_of_customer = "Gleb"
 result_of_purchase = name_of_customer + " paid "+ str(total_cost) + " apples "
 print(result_of_purchase)
 
-boolean variable
 number = +10
 is_positive = number >0
 less_than_hundred = number < 100

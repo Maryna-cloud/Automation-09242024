@@ -5,6 +5,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 @step('I would like to open "{pagename}" page')
 def open_page(context, pagename):
     if pagename == 'Provitolizer':
@@ -37,7 +38,7 @@ def type_text(context, text, text_xpath):
    context.driver.find_element(By.XPATH, text_xpath).send_keys(text)
 
 
-@then("I add new project")
+@step("I add new project")
 def add_new_project(context):
     xpath = {
         'project': "//div[./label[text()='Project Name']]//input",
@@ -51,11 +52,11 @@ def add_new_project(context):
         from steps.steps import click_element
         type_text(context, row[0], xpath['project'])
         type_text(context, row[1], xpath['start_date'])
+        sleep(1)
         type_text(context, row[2], xpath['description'])
         click_element(context, xpath['dimension'])
         sleep(1)
         click_element(context, f"//li/span[text()='{row[3]}']")
-        sleep(1)
         click_element(context, f"{xpath['duration']}{row[4]}']")
         sleep(1)
         #//li/span[text()='Month']

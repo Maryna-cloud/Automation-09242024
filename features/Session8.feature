@@ -16,6 +16,5 @@ Feature: Session 8 Selenium WebDriver practice
     #Session 9
     Then I add new project
     | project | start_date | description | dimension | duration |
-    | first project | 01/09/2025 | This is my first project | Month | 2 Years |
+    | first project | 2025-01-15 | This is my first project | Month | 2 Years |
 
-    Then Wait 10 seconds

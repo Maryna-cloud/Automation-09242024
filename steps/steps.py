@@ -65,25 +65,6 @@ def verify_presents_of_element(context, xpath):
     assert len(elements) == 1
 
 
-@step("Fill out following information")
-def create_project(context):
-    elements = {
-        'project': "//div[./label[text()='Project Name']]//input",
-        'start_date': "//input[@placeholder='Start date']",
-        'description': "//div[./label[text()='Project description']]//textarea",
-        'dimension': "//span[text()='Period Dimension']",
-        'duration': "//span[text()='",
-    }
-    for row in context.table:
-        type_text(context, row[0], elements['project'])
-        type_text(context, row[1], elements['start_date'])
-        type_text(context, row[2], elements['description'])
-        click_element(context, elements['dimension'])
-        sleep(1)
-        click_element(context, f"//li/span[text()='{row[3]}']")
-        click_element(context, f"{elements['duration']}{row[4]}']")
-
-
 @step("Fill out following information with keys")
 def create_project_keys(context):
     elements = {
