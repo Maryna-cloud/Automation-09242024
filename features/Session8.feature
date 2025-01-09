@@ -10,6 +10,12 @@ Feature: Session 8 Selenium WebDriver practice
     And AV type "12345678" to an element with xpath "//input[@type='password']"
     And AV click on "//button[@type='submit']" element
     Then Wait 2 seconds
-    Then AV verify page title as "Profotolizer - P&L charts"
-    Then Wait 5 seconds
-    
+    # in case if you have already at least 1 project, then you'll land on another page Profotolizer - P&L charts
+    Then AV verify page title as "Profotolizer - Projects"
+    Then Wait 1 seconds
+    #Session 9
+    Then I add new project
+    | project | start_date | description | dimension | duration |
+    | first project | 01/09/2025 | This is my first project | Month | 2 Years |
+
+    Then Wait 10 seconds
