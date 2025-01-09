@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-#from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.keys import Keys
 
-#import api
+import api
 
 
 @step('Open "{url}"')
@@ -118,12 +118,6 @@ def login(context, user):
     click_element(context, "//button[contains(text(), 'Login')]")
 
 
-@step('Get weather in "{city}"')
-def get_weather(context, city):
-    weather = api.get_weather(city)
-    print(weather)
-
-
 @step("Switch to new window")
 def switch_to(context):
     all_windows = context.driver.window_handles
@@ -142,16 +136,21 @@ def close_window(context):
 
 @step('Verify that xpath "{xpath}" should contain text "{expected_text}"')
 def verify_text_xpath(context, xpath, expected_text):
-      element =  context.driver.find_element(By.XPATH, xpath)
-      actual_text = element.text
-      print(f"Expected text: {expected_text}")
-      print(f"Actual text: {actual_text}")
-      # Assert the text matches exactly
-      assert actual_text == expected_text, f"Text does not match: '{actual_text}' != '{expected_text}'"
-      # Optionally assert that the expected text is contained in the actual text
-      assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
+    element = context.driver.find_element(By.XPATH, xpath)
+    actual_text = element.text
+    print(f"Expected text: {expected_text}")
+    print(f"Actual text: {actual_text}")
+    # Assert the text matches exactly
+    assert actual_text == expected_text, f"Text does not match: '{actual_text}' != '{expected_text}'"
+    # Optionally assert that the expected text is contained in the actual text
+    assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
 
 
 @step('Wait for the element with xpath "{xpath}" to be present')
 def verify_xpath_present(context, xpath):
     WebDriverWait(context.driver, 20).until(EC.presence_of_element_located((By.XPATH, xpath)))
+
+@step('Get weather in "{city}" in "{units}"')
+def get_weather(context, city, units):
+   weather = api.get_weather(city, units)
+   print(weather)

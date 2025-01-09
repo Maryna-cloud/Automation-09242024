@@ -12,3 +12,4 @@ Feature: Session 8 Selenium WebDriver practice
     Then Wait 2 seconds
     Then AV verify page title as "Profotolizer - P&L charts"
     Then Wait 5 seconds
+    
