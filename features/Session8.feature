@@ -11,8 +11,11 @@ Feature: Session 8 Selenium WebDriver practice
     And AV click on "//button[@type='submit']" element
     Then Wait 2 seconds
     # in case if you have already at least 1 project, then you'll land on another page Profotolizer - P&L charts
-    Then AV verify page title as "Profotolizer - Projects"
+    Then AV verify page title as "Profotolizer - P&L charts"
     Then Wait 1 seconds
+    Then AV click on "//span[contains(text(),"Add Project")]" element
+    Then Wait 1 seconds
+    Then AV verify page title as "Profotolizer - Projects"
     #Session 9
     Then I add new project
     | project | start_date | description | dimension | duration |

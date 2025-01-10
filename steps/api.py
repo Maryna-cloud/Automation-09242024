@@ -11,4 +11,4 @@ def get_weather(city: str = "San Francisco", units: str = "metric"):
     return f"Temperature in {city} is {data["data"]["values"]["temperature"]}{unit_label}"
 
 if __name__ == "__main__":
-    print(get_weather("Chicago", units="metric"))
+    print(get_weather("Cupertino", units="imperial"))
