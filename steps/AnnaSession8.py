@@ -63,3 +63,27 @@ def add_new_project(context):
         #//span[text()='2 Years']
         #//button[text()=" Save"][not(contains(@class,"me-2"))]
         context.driver.find_element(By.XPATH, '//button[text()=" Save"][not(contains(@class,"me-2"))]').click()
+
+
+@step('I add new project with "{project_input}" and "{start_date_input}" and "{description_input}" and "{dimention_input}" and "{duration_input}"')
+def add_project_data(context,project_input,start_date_input, description_input, dimention_input, duration_input):
+    xpath = {
+        'project': "//div[./label[text()='Project Name']]//input",
+        'start_date': "//input[@placeholder='Start date']",
+        'description': "//div[./label[text()='Project description']]//textarea",
+        'dimension': "//span[text()='Period Dimension']",
+        'duration': "//span[text()='",
+    }
+    from steps.steps import type_text
+    from steps.steps import click_element
+    type_text(context, project_input, xpath['project'])
+    type_text(context, start_date_input, xpath['start_date'])
+    sleep(1)
+    type_text(context, description_input, xpath['description'])
+    click_element(context, xpath['dimension'])
+    sleep(1)
+    click_element(context, f"//li/span[text()='{dimention_input}']")
+    click_element(context, f"{xpath['duration']}{duration_input}']")
+    sleep(1)
+    context.driver.find_element(By.XPATH, '//button[text()=" Save"][not(contains(@class,"me-2"))]').click()
+    print(f"project {project_input} added sucessfully")
